@@ -1,0 +1,43 @@
+.personal-info {
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.personal-info img {
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.employee-profile.active {
+  background-color: #95e998; /* Green color => Active  */
+}
+
+.employee-profile.inactive {
+  background-color: #f06875; /* Red color => Not Active */
+}
+
+.personal-info h2 {
+  color: #333;
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+}
+span {
+  color: rgb(234, 130, 11);
+}
+.personal-info p {
+  color: #666;
+  margin: 0;
+}
+.personal-info h4 span {
+  color: #333;
+  font-size: 15px;
+  font-weight: 700;
+}
+.personal-info h4 {
+  color: #333;
+  font-size: 15px;
+  font-weight: 100;
+}

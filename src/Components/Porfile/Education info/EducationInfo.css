@@ -1,0 +1,24 @@
+.education-info {
+  margin-bottom: 20px;
+}
+
+.education-info h4 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.education-info p {
+  color: #666;
+  margin-bottom: 3px;
+}
+.education-info span {
+  font-weight: 700;
+  color: rgb(234, 130, 11);
+  margin-bottom: 3px;
+}
+.education-info ul {
+  margin: 5px 0;
+  text-align: left;
+  padding: 5px 10px;
+}

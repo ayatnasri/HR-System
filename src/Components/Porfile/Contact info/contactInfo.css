@@ -1,0 +1,28 @@
+.contact-info {
+  text-align: left;
+  background-color: #f0f0f0; /* Grå bakgrund */
+  padding: 0 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.contact-info h2 {
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.contact-info h4 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  color: #666;
+  font-size: 15px;
+}
+.contact-info svg {
+  margin-right: 15px; /* Justera avståndet mellan ikon och text */
+  font-size: 18px; /* Justera ikonens storlek */
+  color: rgb(234, 130, 11);
+}
