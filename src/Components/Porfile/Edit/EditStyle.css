@@ -1,0 +1,62 @@
+.ReactModal__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ReactModal__Content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 600px;
+  max-width: 80%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional styling for form elements inside the modal */
+.ReactModal__Content label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.ReactModal__Content input {
+  width: 60%;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+.ReactModal__Content button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.ReactModal__Content button + button {
+  margin-left: 10px;
+}
+
+/* Close button style (optional) */
+.ReactModal__Content .modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}

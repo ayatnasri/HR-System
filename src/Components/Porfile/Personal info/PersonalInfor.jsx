@@ -1,6 +1,6 @@
 import "./personalInfo.css";
 
-function PersonalInfo({ employee }) {
+function PersonalInfo({ employee, onEditClick }) {
   return (
     <div className="personal-info">
       <img
@@ -19,6 +19,7 @@ function PersonalInfo({ employee }) {
         <h4>
           <span>Job time :</span> {employee.jobTime}
         </h4>
+        <button onClick={onEditClick}>Edit profile</button>
       </div>
     </div>
   );

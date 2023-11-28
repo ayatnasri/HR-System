@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import PersonalInfo from "./Personal info/PersonalInfor";
 import ContactInfo from "./Contact info/ContactInfo";
 import EducationInfo from "./Education info/EducationInfo";
 import AboutMe from "./About Me/AboutMe";
 import "./EmployeeProfile.css";
+import EditEmployeeModal from "./Edit/EditEmployeeModal";
 
 function EmployProfile() {
-  const emploeeInformation = {
+  const [isEditing, setIsEditing] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const [employeeState, setEmployeeState] = useState({
     id: 1,
     name: "Sara Sabrin",
     jobTitle: "Software Engineer",
@@ -29,22 +33,55 @@ function EmployProfile() {
     skills: ["JavaScript", "React", "Node.js"],
     description:
       "Passionate software engineer with over 5 years of experience in full-stack web development. I specialize in building scalable and maintainable applications using the latest technologies. I am dedicated to delivering high-quality code and enjoy collaborating with cross-functional teams to solve complex problems.",
+  });
+
+  const handleEditClick = () => {
+    setModalIsOpen(true);
+  };
+
+  const handelChange = (e) => {
+    const { name, value } = e.target;
+    setEmployeeState({ ...employeeState, [name]: value });
+  };
+
+  const handleSave = (e) => {
+    // Add logic to save changes to employeeData
+    e.preventDefault();
+    setEmployeeState(employeeState);
+
+    setModalIsOpen(false);
+    setIsEditing(false);
+  };
+
+  const handleModalClose = () => {
+    setModalIsOpen(false);
   };
 
   return (
-    <div className="profile">
+    <div className={`employee-profile ${isEditing ? "editing" : ""}`}>
       <h1>Employee Profile</h1>
-      <div className="employee-profile">
+      <div className="employee-profile2">
         <div className="left-section">
-          <PersonalInfo employee={emploeeInformation} />
-          <ContactInfo employee={emploeeInformation} />
+          <PersonalInfo
+            employee={employeeState}
+            onEditClick={handleEditClick}
+          />
+          <ContactInfo employee={employeeState} />
         </div>
 
         <div className="right-section">
-          <AboutMe employee={emploeeInformation} />
-          <EducationInfo employee={emploeeInformation} />
+          <AboutMe employee={employeeState} />
+          <EducationInfo employee={employeeState} />
         </div>
       </div>
+
+      <EditEmployeeModal
+        isOpen={modalIsOpen}
+        onRequestClose={handleModalClose}
+        onSave={handleSave}
+        employee={employeeState}
+        handelChange={handelChange}
+      />
     </div>
   );
 }
